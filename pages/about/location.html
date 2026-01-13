@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="법률사무소 후 오시는 길 - 서울특별시 강남구 테헤란로">
+    <title>오시는 길 | 법률사무소 후</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/unite/tkwls/김후 로고.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+    <style>
+        /* Location Specific Styles */
+        .location-section {
+            padding: 80px 0;
+            background: var(--color-white);
+        }
+
+        @media (min-width: 768px) {
+            .location-section {
+                padding: 120px 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .location-section {
+                padding: 140px 0;
+            }
+        }
+
+        .location-info-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .location-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .location-info-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .location-card {
+            padding: 2rem;
+            background: var(--color-white);
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--color-gray-100);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .location-card:hover {
+            border-color: rgba(201, 169, 98, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+        }
+
+        .location-card-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.12) 0%, rgba(201, 169, 98, 0.04) 100%);
+            border-radius: 14px;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .location-card:hover .location-card-icon {
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+        }
+
+        .location-card-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--color-gold);
+            transition: stroke 0.3s var(--ease-out-expo);
+        }
+
+        .location-card:hover .location-card-icon svg {
+            stroke: var(--color-white);
+        }
+
+        .location-card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-card-content {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-black);
+            line-height: 1.6;
+        }
+
+        .location-card-content a {
+            color: var(--color-black);
+            transition: color 0.3s;
+        }
+
+        .location-card-content a:hover {
+            color: var(--color-gold);
+        }
+
+        .transport-section {
+            margin-top: 60px;
+            padding: 3rem 2rem;
+            background: var(--color-gray-50);
+            border-radius: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .transport-section {
+                margin-top: 80px;
+                padding: 4rem;
+            }
+        }
+
+        .transport-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-black);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .transport-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 0;
+        }
+
+        @media (min-width: 768px) {
+            .transport-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .transport-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .transport-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .transport-badge {
+            flex-shrink: 0;
+            padding: 0.5rem 1rem;
+            background: var(--color-black);
+            color: var(--color-white);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+
+        .transport-badge.subway {
+            background: #00A651;
+        }
+
+        .transport-badge.bus {
+            background: #0068B7;
+        }
+
+        .transport-badge.parking {
+            background: var(--color-gold-dark);
+        }
+
+        .transport-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.25rem;
+        }
+
+        .transport-info p {
+            font-size: 0.9375rem;
+            color: var(--color-gray-500);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="/unite/" class="logo">
+                <img src="/unite/images/logo.svg" alt="UNITE 법률사무소" class="logo-img logo-dark"><img src="/unite/images/logo-white.svg" alt="UNITE 법률사무소" class="logo-img logo-white">
+            </a>
+
+            <nav class="gnb">
+                <ul class="gnb-list">
+                    <li class="has-dropdown">
+                        <a href="greeting.html">법률사무소 소개</a>
+                        <ul class="dropdown">
+                            <li><a href="greeting.html">인사말</a></li>
+                            <li><a href="location.html">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="lawyers.html">변호사 소개</a></li>
+                    <li class="has-dropdown">
+                        <a href="../practice/criminal.html">업무분야</a>
+                        <ul class="dropdown">
+                            <li><a href="../practice/criminal.html">형사소송</a></li>
+                            <li><a href="../practice/civil.html">민사소송</a></li>
+                            <li><a href="../practice/family.html">가사소송</a></li>
+                            <li><a href="../practice/administrative.html">행정소송</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../cases/index.html">성공사례</a></li>
+                    <li><a href="../media/index.html">언론보도</a></li>
+                    <li class="has-dropdown">
+                        <a href="../contact/consultation.html">상담요청</a>
+                        <ul class="dropdown">
+                            <li><a href="../contact/consultation.html">1:1 상담신청</a></li>
+                            <li><a href="../contact/self-check.html">사이버 범죄 자가진단</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="tel:02-1234-5678" class="header-tel">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>02-1234-5678</span>
+                </a>
+                <a href="../contact/consultation.html" class="header-contact">
+                    <span>1:1 상담신청</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="메뉴">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <ul>
+                <li class="has-submenu">
+                    <span class="nav-num">01</span>
+                    <a href="greeting.html">법률사무소 소개</a>
+                    <button class="submenu-toggle" aria-label="하위메뉴 열기">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="greeting.html">인사말</a></li>
+                        <li><a href="location.html">오시는 길</a></li>
+                    </ul>
+                </li>
+                <li><span class="nav-num">02</span><a href="lawyers.html">변호사 소개</a></li>
+                <li class="has-submenu">
+                    <span class="nav-num">03</span>
+                    <a href="../practice/criminal.html">업무분야</a>
+                    <button class="submenu-toggle" aria-label="하위메뉴 열기">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="../practice/criminal.html">형사소송</a></li>
+                        <li><a href="../practice/civil.html">민사소송</a></li>
+                        <li><a href="../practice/family.html">가사소송</a></li>
+                        <li><a href="../practice/administrative.html">행정소송</a></li>
+                    </ul>
+                </li>
+                <li><span class="nav-num">04</span><a href="../cases/index.html">성공사례</a></li>
+                <li><span class="nav-num">05</span><a href="../media/index.html">언론보도</a></li>
+                <li class="has-submenu">
+                    <span class="nav-num">06</span>
+                    <a href="../contact/consultation.html">상담요청</a>
+                    <button class="submenu-toggle" aria-label="하위메뉴 열기">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="../contact/consultation.html">1:1 상담신청</a></li>
+                        <li><a href="../contact/self-check.html">사이버 범죄 자가진단</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-contact">
+            <p class="mobile-contact-label">법률상담</p>
+            <a href="tel:02-1234-5678" class="mobile-contact-tel">02-1234-5678</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url('../../tkwls/KakaoTalk_20260108_172444612_02.webp');"></div>
+        <div class="page-header-deco"></div>
+        <div class="page-header-content">
+            <div class="page-header-breadcrumb">
+                <a href="../../index.html">홈</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+                <a href="greeting.html">법률사무소 소개</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+                <span>오시는 길</span>
+            </div>
+            <h1 class="page-header-title">오시는 길</h1>
+            <p class="page-header-sub">법률사무소 후 방문을 환영합니다</p>
+        </div>
+    </section>
+
+    <!-- Location Content -->
+    <section class="location-section">
+        <div class="container">
+            <!-- Map -->
+            <div class="map-wrapper animate-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.354071586489!2d127.02861231531047!3d37.49970797981045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a1a2b0001%3A0x1!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDthYztl6TrnoDroZw!5e0!3m2!1sko!2skr!4v1620000000000" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="location-info-grid stagger-children">
+                <div class="location-card">
+                    <div class="location-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <p class="location-card-title">주소</p>
+                    <p class="location-card-content">서울특별시 강남구<br>테헤란로 123 법조빌딩 5층</p>
+                </div>
+                <div class="location-card">
+                    <div class="location-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <p class="location-card-title">전화</p>
+                    <p class="location-card-content"><a href="tel:02-1234-5678">02-1234-5678</a></p>
+                </div>
+                <div class="location-card">
+                    <div class="location-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <p class="location-card-title">이메일</p>
+                    <p class="location-card-content"><a href="mailto:contact@lawfirmhu.co.kr">contact@lawfirmhu.co.kr</a></p>
+                </div>
+                <div class="location-card">
+                    <div class="location-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <p class="location-card-title">상담시간</p>
+                    <p class="location-card-content">평일 09:00 - 18:00<br>주말/공휴일 예약상담</p>
+                </div>
+            </div>
+
+            <!-- Transport Section -->
+            <div class="transport-section animate-on-scroll">
+                <h3 class="transport-title">교통 안내</h3>
+                <div class="transport-grid stagger-children">
+                    <div class="transport-item">
+                        <span class="transport-badge subway">지하철</span>
+                        <div class="transport-info">
+                            <h4>2호선 강남역</h4>
+                            <p>3번 출구에서 도보 5분</p>
+                        </div>
+                    </div>
+                    <div class="transport-item">
+                        <span class="transport-badge bus">버스</span>
+                        <div class="transport-info">
+                            <h4>강남역 정류장</h4>
+                            <p>146, 341, 360, 740 외</p>
+                        </div>
+                    </div>
+                    <div class="transport-item">
+                        <span class="transport-badge parking">주차</span>
+                        <div class="transport-info">
+                            <h4>건물 내 주차장</h4>
+                            <p>2시간 무료 주차 가능</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/unite/" class="footer-logo">
+                        <img src="/unite/images/logo.svg" alt="UNITE 법률사무소" class="logo-img logo-dark"><img src="/unite/images/logo-white.svg" alt="UNITE 법률사무소" class="logo-img logo-white">
+                    </a>
+                    <p class="footer-slogan">당신의 권리를 끝까지 지키겠습니다</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 법률사무소 후. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/pages.js"></script>
+</body>
+</html>
