@@ -8,6 +8,28 @@
     'use strict';
 
     // =========================================
+    // Scroll Reset on Page Load
+    // =========================================
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+    });
+
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 0);
+    });
+
+    window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+    });
+
+    // =========================================
     // DOM Elements
     // =========================================
     const header = document.getElementById('header');

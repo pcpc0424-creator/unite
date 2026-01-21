@@ -962,16 +962,6 @@ body.menu-open .header {
     color: var(--color-white);
     line-height: 1.15;
     letter-spacing: -0.03em;
-    opacity: 0;
-    transform: translateY(100%);
-}
-
-.title-line:nth-child(1) .title-text {
-    animation: slideUp 1s var(--ease-out) 0.4s forwards;
-}
-
-.title-line:nth-child(2) .title-text {
-    animation: slideUp 1s var(--ease-out) 0.55s forwards;
 }
 
 .hero-title em {
@@ -989,9 +979,6 @@ body.menu-open .header {
     color: rgba(255, 255, 255, 0.75);
     line-height: 2;
     margin-bottom: var(--space-2xl);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s var(--ease-out) 0.8s forwards;
 }
 
 @media (min-width: 768px) {
@@ -1006,9 +993,6 @@ body.menu-open .header {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-md);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s var(--ease-out) 1s forwards;
 }
 
 .btn-primary {
@@ -1080,9 +1064,6 @@ body.menu-open .header {
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 4px;
         backdrop-filter: blur(10px);
-        opacity: 0;
-        transform: translateX(30px);
-        animation: fadeInLeft 0.8s var(--ease-out) 1.2s forwards;
     }
 }
 
@@ -1129,8 +1110,6 @@ body.menu-open .header {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    opacity: 0;
-    animation: fadeIn 1s var(--ease-out) 1.5s forwards;
 }
 
 .scroll-mouse {
@@ -1170,8 +1149,6 @@ body.menu-open .header {
         bottom: 3rem;
         display: block;
         z-index: 3;
-        opacity: 0;
-        animation: fadeIn 1s var(--ease-out) 1.5s forwards;
     }
 }
 
@@ -2387,13 +2364,13 @@ body.menu-open .header {
 .footer-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl) var(--space-lg);
+    gap: var(--space-2xl) var(--space-xl);
 }
 
 @media (min-width: 768px) {
     .footer-links {
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-xl);
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-3xl);
     }
 }
 
@@ -2403,13 +2380,13 @@ body.menu-open .header {
     color: var(--color-white);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .footer-col ul {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .footer-col a {
