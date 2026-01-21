@@ -633,6 +633,42 @@
     }
 
     // =========================================
+    // Hero Video Slider
+    // =========================================
+    function initHeroVideoSlider() {
+        const slides = document.querySelectorAll('.hero-video-slide');
+        if (slides.length === 0) return;
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        const interval = 6000; // 6초마다 전환
+
+        function nextSlide() {
+            // 현재 슬라이드에서 active 제거
+            slides[currentSlide].classList.remove('active');
+
+            // 다음 슬라이드로 이동
+            currentSlide = (currentSlide + 1) % totalSlides;
+
+            // 다음 슬라이드에 active 추가
+            slides[currentSlide].classList.add('active');
+        }
+
+        // 모든 비디오 재생 시작
+        slides.forEach(function(slide) {
+            const video = slide.querySelector('video');
+            if (video) {
+                video.play().catch(function(e) {
+                    console.log('Video autoplay prevented:', e);
+                });
+            }
+        });
+
+        // 일정 간격으로 슬라이드 전환
+        setInterval(nextSlide, interval);
+    }
+
+    // =========================================
     // Initialize
     // =========================================
     function init() {
@@ -653,6 +689,7 @@
         initCursorEffect();
         initLazyLoad();
         initPreloader();
+        initHeroVideoSlider();
     }
 
     // Run on DOM ready

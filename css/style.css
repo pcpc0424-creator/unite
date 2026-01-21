@@ -802,8 +802,15 @@ body.menu-open .header {
 .hero-bg-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
+}
+
+/* PC 버전 오버레이 - 모바일과 동일 */
+@media (min-width: 1024px) {
+    .hero-bg-overlay {
+        background: rgba(0, 0, 0, 0.4);
+    }
 }
 
 .hero-bg-pattern {
@@ -813,6 +820,37 @@ body.menu-open .header {
         linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 60px 60px;
+    z-index: 2;
+}
+
+/* Hero Video Slider */
+.hero-video-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-video-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-video-slide.active {
+    opacity: 1;
+}
+
+.hero-video-slide video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 /* Hero Decorations */

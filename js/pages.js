@@ -1,5 +1,5 @@
 /**
- * 법률사무소 후 - Premium Detail Pages JavaScript
+ * Premium Detail Pages JavaScript
  * Scroll Animations & Interactive Elements
  */
 
